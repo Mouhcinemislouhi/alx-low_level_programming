@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if $CFILE variable is set
+if [ -z "$CFILE" ]; then
+  echo "Error: \$CFILE variable is not set."
+  exit 1
+fi
+
+# Check if the C file exists
+if [ ! -e "$CFILE" ]; then
+  echo "Error: The C file '$CFILE' does not exist."
+  exit 1
+fi
+
+# Define the output file name
+OUTPUT_FILE="c"
+
+# Run the C file through the preprocessor and save the result
+cpp "$CFILE" -o "$OUTPUT_FILE"
+
+# Check if the preprocessor ran successfully
+if [ $? -eq 0 ]; then
+  echo "Preprocessing completed successfully. Output saved in '$OUTPUT_FILE'."
+else
+  echo "Error: Preprocessing failed."
+fi
+
