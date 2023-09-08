@@ -95,5 +95,5 @@ What you should learn from this project:
 ---
 
 ## Author
-* **Github** - [aarizat](https://github.com/aarizat)
-* **Twitter** - [@aarizatr](https://twitter.com/aarizatr)
+* **Github** - [Mouhcinemislouhi](https://github.com/Mouhcinemislouhi)
+* **Instagram** - [@imo7cin](https://instagram.com/imo7cin)
