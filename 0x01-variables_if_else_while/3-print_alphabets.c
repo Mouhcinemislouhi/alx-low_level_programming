@@ -1,24 +1,16 @@
 #include <stdio.h>
 
-int main() {
-    char lowercase = 'a';
-    char uppercase = 'A';
+int main(void) {
+    char c, b;
 
-    for (int i = 0; i < 26; i++) {
-        // Print lowercase letter
-        putchar(lowercase);
+    for (c = 'a'; c <= 'z'; c++)
+        putchar(c);
 
-        // Print uppercase letter
-        putchar(uppercase);
+    for (b = 'A'; b <= 'Z'; b++)
+        putchar(b);
 
-        // Increment letters
-        lowercase++;
-        uppercase++;
-    }
-
-    // Print a newline character
     putchar('\n');
 
-    return 0;
+    return (0);
 }
 
