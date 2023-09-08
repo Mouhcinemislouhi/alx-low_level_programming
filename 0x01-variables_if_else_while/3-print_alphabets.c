@@ -1,14 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main(void) {
-    char c, b;
+/**
+ * main - Entry point for alphabet printing program
+ *
+ * This program prints the lowercase and uppercase alphabet
+ * in sequence, followed by a newline character.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    char letter;
 
-    for (c = 'a'; c <= 'z'; c++)
-        putchar(c);
-
-    for (b = 'A'; b <= 'Z'; b++)
-        putchar(b);
-
+    for (letter = 'a'; letter <= 'z'; letter++)
+    {
+        putchar(letter);
+    }
+    for (letter = 'A'; letter <= 'Z'; letter++)
+    {
+        putchar(letter);
+    }
     putchar('\n');
 
     return (0);
