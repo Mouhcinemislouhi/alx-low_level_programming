@@ -1,24 +1,19 @@
-/*
- * File: 0-putchar.c
- * Auth: Mouhcine Mislouhi
- *
- */
-
-#include "putchar.h"
+#include "main.h"
 
 /**
- * main - Prints "putchar" followed by a new line.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	_putchar('P');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
+	char str[] = "_putchar";
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 	return (0);
 }
