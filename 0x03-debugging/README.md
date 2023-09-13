@@ -34,6 +34,8 @@ Requirements
 -   Your code should use the `Betty` style. It will be checked using `betty-style.pl` and `betty-doc.pl`
 -   A README.md file at the root of the repo, containing a description of the repository
 -   A README.md file, at the root of the folder of this project (i.e. `0x03-debugging`), describing what this project is about
+---
 
-author:@Mouhcine Mislouhi
-insta :@imo7cin
+## Author
+* **Github** - [Mouhcinemislouhi](https://github.com/Mouhcinemislouhi)
+* **Instagram** - [@imo7cin](https://instagram.com/imo7cin)
