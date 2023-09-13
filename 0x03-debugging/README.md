@@ -1,148 +1,45 @@
-# 0x03. C - Debugging
+0x03. C - Debugging
+===================
 
-## GENERAL :open_book::open_book::open_book::
+-   By Carrie Ybay
+-   Ongoing project - started 08-31-2021, must end by 09-03-2021 (in 1 day) - you're done with 0% of tasks.
+-   Checker was released at 09-01-2021 12:00 PM
+-   QA review fully automated.
 
- <ol>
-	<li>What is debugging</li>
-	<li>What are some methods of debugging manually</li>
-	<li>How to read the error messages</li>
-</ol>
+Resources
+---------
 
-## RESOURCES:
+**Read or watch:**
 
- <ol>
-	<li><a href="/rltoken/iADtJa-KkjYI56m-cQyWIw" title="Debugging" target="_blank">Debugging</a></li>
-	<li><a href="/rltoken/sS_CVV32moC3tyEImNCvig" title="Rubber Duck Debugging" target="_blank">Rubber Duck Debugging</a></li>
-</ol>
+-   [Debugging](https://alx-intranet.hbtn.io/rltoken/faGcpiJiejHH6GhqpmbhUw "Debugging")
+-   [Rubber Duck Debugging](https://alx-intranet.hbtn.io/rltoken/RaecqJBNkmZ92vLMpNDuGg "Rubber Duck Debugging")
 
-## INTRODUCTION TO FILES :closed_book::closed_book::closed_book::
+Debugging is the process of finding and fixing errors in software that prevents it from running correctly. As you become a more advanced programmer and an industry engineer, you will learn how to use debugging tools such as `gdb` or built-in tools that IDEs have. However, it's important to understand the concepts and processes of debugging manually.
 
-0.	[**0-main.c**:](#0-mainc) In most projects, we often give you only one main file to test with. For example, this main file is a test for a <code>postitive_or_negative()</code> function similar to the one you worked with in <a href="/rltoken/oksQRX9MFUF8saGnlIKqYw" title="an earlier C project" target="_blank">an earlier C project</a>Based on the <code>main.c</code> file above, create a file named <code>0-main.c</code>. This file must test that the function <code>positive_or_negative()</code> gives the correct output when given a case of <code>0</code>.You are not coding the solution / function, you’re just testing it! However, you can adapt your function from <a href="/rltoken/oksQRX9MFUF8saGnlIKqYw" title="0x01. C - Variables, if, else, while - Task #0" target="_blank">0x01. C - Variables, if, else, while - Task #0</a> to compile with this main file to test locally.
-1.	[**1-main.c**:](#1-mainc) Copy this main file. Comment out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.Your output should look like this
-2.	[**2-largest_number.c**:](#2-largest_numberc) This program prints the largest of three integers.? That’s definitely not right.Fix the code in <code>2-largest_number.c</code> so that it correctly prints out the largest of three numbers, no matter the case.
-3.	[**3-print_remaining_days.c**:](#3-print_remaining_daysc) This program converts a date to the day of year and determines how many days are left in the year, taking leap year into consideration.Output looks good for <code>04/01/1997</code>! Let’s make a new main file <code>3-main_b.c</code> to try a case that is a leap year <code>02/29/2000</code>.? That doesn’t seem right.Fix the <code>print_remaining_days()</code> function so that the output works correctly for <em>all</em> dates and <em>all</em> leap years.
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/5/af682f2cbb6d73fd4e42.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20210901%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210901T181220Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e1b094ca0dcfc4a561ddbf396c0224cdb014cb52c8d3d03efe6fc24e372e6573)
 
-## FILES :bookmark_tabs::bookmark_tabs::bookmark_tabs::
+Learning Objectives
+-------------------
 
-### 0-main.c
+At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/fbQbYSz0Qxw5MEyb6yR05w "explain to anyone"), without the help of Google:
 
-**<p>In most projects, we often give you only one main file to test with. For example, this main file is a test for a <code>postitive_or_negative()</code> function similar to the one you worked with in <a href="/rltoken/oksQRX9MFUF8saGnlIKqYw" title="an earlier C project" target="_blank">an earlier C project</a></p><p>Based on the <code>main.c</code> file above, create a file named <code>0-main.c</code>. This file must test that the function <code>positive_or_negative()</code> gives the correct output when given a case of <code>0</code>.</p><p>You are not coding the solution / function, you’re just testing it! However, you can adapt your function from <a href="/rltoken/oksQRX9MFUF8saGnlIKqYw" title="0x01. C - Variables, if, else, while - Task #0" target="_blank">0x01. C - Variables, if, else, while - Task #0</a> to compile with this main file to test locally.</p>**
+### General
 
-<pre><code>carrie@ubuntu:/debugging$ cat main.c
-#include "holberton.h"
+-   What is debugging
+-   What are some methods of debugging manually
+-   How to read the error messages
 
-/**
-* main - tests function that prints if integer is positive or negative
-* Return: 0
-*/
+Requirements
+------------
 
-int main(void)
-{
-        int i;
+### General
 
-        i = 98;
-        positive_or_negative(i);
+-   Allowed editors: `vi`, `vim`, `emacs`
+-   All your files will be compiled on Ubuntu 20.04 LTS using `gcc`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+-   All your files should end with a new line
+-   Your code should use the `Betty` style. It will be checked using `betty-style.pl` and `betty-doc.pl`
+-   A README.md file at the root of the repo, containing a description of the repository
+-   A README.md file, at the root of the folder of this project (i.e. `0x03-debugging`), describing what this project is about
 
-        return (0);
-}
-carrie@ubuntu:/debugging$
-</code></pre>
-
-### 1-main.c
-
-**<p>Copy this main file. Comment out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.</p><p>Your output should look like this</p>**
-
-<pre><code>carrie@ubuntu:/debugging$ cat 1-main.c
-#include &lt;stdio.h&gt;
-
-/**
-* main - causes an infinite loop
-* Return: 0
-*/
-
-int main(void)
-{
-        int i;
-
-        printf("Infinite loop incoming :(\n");
-
-        i = 0;
-
-        while (i &lt; 10)
-        {
-                putchar(i);
-        }
-
-        printf("Infinite loop avoided! \\o/\n");
-
-        return (0);
-}
-carrie@ubuntu:/debugging$
-</code></pre>
-
-### 2-largest_number.c
-
-**<p>This program prints the largest of three integers.</p><p>? That’s definitely not right.</p><p>Fix the code in <code>2-largest_number.c</code> so that it correctly prints out the largest of three numbers, no matter the case.</p>**
-
-<pre><code>carrie@ubuntu:/debugging$ cat 2-main.c
-#include &lt;stdio.h&gt;
-#include "holberton.h"
-
-/**
-* main - prints the largest of 3 integers
-* Return: 0
-*/
-
-int main(void)
-{
-        int a, b, c;
-        int largest;
-
-        a = 972;
-        b = -98;
-        c = 0;
-
-        largest = largest_number(a, b, c);
-
-        printf("%d is the largest number\n", largest);
-
-        return (0);
-}
-carrie@ubuntu:/debugging$
-</code></pre>
-
-### 3-print_remaining_days.c
-
-**<p>This program converts a date to the day of year and determines how many days are left in the year, taking leap year into consideration.</p><p>Output looks good for <code>04/01/1997</code>! Let’s make a new main file <code>3-main_b.c</code> to try a case that is a leap year <code>02/29/2000</code>.</p><p>? That doesn’t seem right.</p><p>Fix the <code>print_remaining_days()</code> function so that the output works correctly for <em>all</em> dates and <em>all</em> leap years.</p>**
-
-<pre><code>carrie@ubuntu:/debugging$ cat 3-main_a.c
-#include &lt;stdio.h&gt;
-#include "holberton.h"
-
-/**
-* main - takes a date and prints how many days are left in the year, taking
-* leap years into account
-* Return: 0
-*/
-
-int main(void)
-{
-    int month;
-    int day;
-    int year;
-
-    month = 4;
-    day = 01;
-    year = 1997;
-
-    printf("Date: %02d/%02d/%04d\n", month, day, year);
-
-    day = convert_day(month, day);
-
-    print_remaining_days(month, day, year);
-
-    return (0);
-}
-
-Mouhcine Mislouhi:/debugging$
-</code></pre>
+author:@Mouhcine Mislouhi
+insta :@imo7cin
